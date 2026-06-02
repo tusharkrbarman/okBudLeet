@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Company tags sourced from `snehasishroy/leetcode-companywise-interview-questions`, including a "recent 6 months" view.
 - Interview frequency pill (%) injected next to the difficulty tag.
 - ELO rating from `zerotrac/leetcode_problem_rating` with Grandmaster / Master / Expert / Hard / Medium / Easy label.
-- Time & space complexity badges for 1,000+ problems.
 - Post-submission diagnostics panel (Approach / Efficiency / Code Style tabs) on the submission page.
 - Light and dark mode.
 - SPA navigation observer so widgets re-inject on LeetCode route changes.

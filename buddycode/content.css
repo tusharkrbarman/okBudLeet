@@ -67,35 +67,6 @@
   border-color: rgba(205, 92, 92, 0.25);
 }
 
-/* ── Complexity Badges ───────────────────────────────────────────────── */
-.buddycode-complexity-section {
-  margin: 10px 0;
-  padding: 10px 12px;
-  background: var(--sp-bg);
-  border: 1px solid var(--sp-border-light);
-  border-radius: var(--sp-radius-lg);
-}
-
-.buddycode-complexity-badges {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.buddycode-complexity-badge {
-  font-family: var(--sp-font-mono) !important;
-  font-size: 0.68rem;
-  background: var(--sp-accent-muted);
-  color: var(--sp-accent);
-  border: 1px solid rgba(205, 92, 92, 0.15);
-  padding: 4px 10px;
-  border-radius: var(--sp-radius);
-}
-.buddycode-complexity-badge strong {
-  font-weight: 700;
-  color: #b84b4b;
-}
-
 /* ── ELO Rating ──────────────────────────────────────────────────────── */
 .buddycode-elo-section {
   margin: 10px 0;
@@ -434,7 +405,6 @@ html.dark .buddycode-value,
 /* ── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .buddycode-company-section,
-  .buddycode-complexity-section,
   .buddycode-elo-section {
     padding: 8px 10px;
   }
@@ -456,12 +426,10 @@ html.dark,
 }
 
 html.dark .buddycode-company-section,
-html.dark .buddycode-complexity-section,
 html.dark .buddycode-elo-section,
 html.dark .buddycode-freq-section,
 html.dark .buddycode-company-section,
 .dark .buddycode-company-section,
-.dark .buddycode-complexity-section,
 .dark .buddycode-elo-section,
 .dark .buddycode-freq-section {
   background: var(--sp-bg);

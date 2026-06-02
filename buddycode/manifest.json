@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "BuddyCode",
   "version": "1.0",
-  "description": "Time/space complexity, verified company tags, ELO ratings, and post-submission diagnostics for LeetCode.",
+  "description": "Verified company tags, ELO ratings, interview frequency, and post-submission diagnostics for LeetCode.",
   "permissions": ["storage"],
   "host_permissions": [
     "*://leetcode.com/*",

@@ -24,7 +24,6 @@ Stop guessing which problems matter. BuddyCode layers verified interview-prep da
 | 🏢 **Company Tags** | See which companies (Amazon, Google, Meta, etc.) have asked each problem — sourced from the popular [snehasishroy/leetcode-companywise-interview-questions](https://github.com/snehasishroy/leetcode-companywise-interview-questions) repo and refreshed against the live "recent 6 months" dataset. |
 | 📈 **Interview Frequency** | A pill next to every problem shows the % of candidate reports that include it. No more flying blind on which problems to prioritize. |
 | 🎯 **ELO Rating** | Each problem shows its dynamic ELO score from [zerotrac/leetcode_problem_rating](https://github.com/zerotrac/leetcode_problem_rating), with a label (Easy / Medium / Hard / Expert / Master / Grandmaster). |
-| ⏱ **Time & Space Complexity** | Curated Big-O badges for 1,000+ LeetCode problems in a single glance. |
 | 📊 **Post-Submission Panel** | After you submit, a clean diagnostics panel appears with runtime, memory, beat-percentile, distribution histogram, and style feedback — modelled on LeetCode's native AI layout (Approach / Efficiency / Code Style tabs). |
 | 🌗 **Dark Mode** | Auto-adapts to LeetCode's dark theme. |
 | 🚀 **Zero Configuration** | No sign-up, no API keys, no account. Install and forget. |
@@ -38,7 +37,7 @@ Stop guessing which problems matter. BuddyCode layers verified interview-prep da
 
 | Description Page | Submission Panel |
 |---|---|
-| _Company tags, ELO, frequency, complexity badges_ | _Runtime, memory, distribution, style notes_ |
+| _Company tags, ELO, frequency_ | _Runtime, memory, distribution, style notes_ |
 
 ---
 

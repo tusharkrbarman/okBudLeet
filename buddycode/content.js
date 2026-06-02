@@ -4,7 +4,6 @@
 
   const CONFIG = {
     enabled:       true,
-    showComplexity: true,
     showCompanies:  true,
     showElo:        true,
     showFreq:       true,
@@ -234,7 +233,6 @@
       if (!isDescriptionTab) return;
       if (CONFIG.showCompanies)          injectCompanyTags(data);
       if (CONFIG.showElo)                injectEloWithRetry(data);
-      if (CONFIG.showComplexity && data)  injectComplexity(data);
     }, CONFIG.animationDelay);
 
     if (CONFIG.showFreq && isDescriptionTab) {
@@ -364,47 +362,6 @@
     });
 
     wrapper.appendChild(tagsRow);
-    container.appendChild(wrapper);
-  }
-
-  // ── Inject: Complexity ────────────────────────────────────────────────
-  function injectComplexity(data) {
-    const container = findInjectionPoint();
-    if (!container) return;
-
-    const existing = document.getElementById("buddycode-complexity");
-    if (existing) existing.remove();
-
-    const wrapper = document.createElement("div");
-    wrapper.id = "buddycode-complexity";
-    wrapper.className = "buddycode-complexity-section";
-
-    const title = document.createElement("div");
-    title.className = "buddycode-section-label";
-    title.textContent = "Complexity Analysis";
-    wrapper.appendChild(title);
-
-    const badges = document.createElement("div");
-    badges.className = "buddycode-complexity-badges";
-
-    const timeBadge = document.createElement("span");
-    timeBadge.className = "buddycode-complexity-badge time";
-    timeBadge.textContent = "Time: ";
-    const timeStrong = document.createElement("strong");
-    timeStrong.textContent = data.time;
-    timeBadge.appendChild(timeStrong);
-
-    const spaceBadge = document.createElement("span");
-    spaceBadge.className = "buddycode-complexity-badge space";
-    spaceBadge.textContent = "Space: ";
-    const spaceStrong = document.createElement("strong");
-    spaceStrong.textContent = data.space;
-    spaceBadge.appendChild(spaceStrong);
-
-    badges.appendChild(timeBadge);
-    badges.appendChild(spaceBadge);
-    wrapper.appendChild(badges);
-
     container.appendChild(wrapper);
   }
 
@@ -647,7 +604,7 @@
   // ── Cleanup ────────────────────────────────────────────────────────────
   function cleanupWidgets() {
     const ids = [
-      "buddycode-company-tags", "buddycode-complexity", "buddycode-elo",
+      "buddycode-company-tags", "buddycode-elo",
       "buddycode-elo-inline", "buddycode-frequency", "buddycode-frequency-inline",
       "buddycode-no-data", "buddycode-submission-panel"
     ];

@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggles = {
     enabled:    document.getElementById("toggle-enabled"),
-    complexity: document.getElementById("toggle-complexity"),
     companies:  document.getElementById("toggle-companies"),
     elo:        document.getElementById("toggle-elo"),
     freq:       document.getElementById("toggle-freq"),
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const defaults = {
     enabled: true,
-    showComplexity: true,
     showCompanies: true,
     showElo: true,
     showFreq: true,
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyUI(config) {
     toggles.enabled.checked = config.enabled;
-    toggles.complexity.checked = config.showComplexity;
     toggles.companies.checked = config.showCompanies;
     toggles.elo.checked = config.showElo;
     toggles.freq.checked = config.showFreq;
@@ -43,11 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggles.enabled.addEventListener("change", () => {
       config.enabled = toggles.enabled.checked;
-      saveConfig(config);
-    });
-
-    toggles.complexity.addEventListener("change", () => {
-      config.showComplexity = toggles.complexity.checked;
       saveConfig(config);
     });
 
