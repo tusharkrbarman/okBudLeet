@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Checkpoint files (build script artifacts)
+*_checkpoint.json
+
+# Temporary files
+*.tmp
+*.temp
+
+# Chrome extension build
+*.crx
+*.pem
+*.zip

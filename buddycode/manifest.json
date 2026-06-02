@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "BuddyCode",
+  "version": "1.0",
+  "description": "Time/space complexity, verified company tags, ELO ratings, and post-submission diagnostics for LeetCode.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://leetcode.com/*",
+    "*://*.leetcode.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://leetcode.com/*", "*://*.leetcode.com/*"],
+      "js": ["data.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["companies.json", "frequencies.json"],
+      "matches": ["*://leetcode.com/*", "*://*.leetcode.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "BuddyCode"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

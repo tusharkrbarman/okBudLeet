@@ -1,0 +1,1 @@
+// ── BuddyCode — Background Service Worker ──────────────────────────

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuddyCode</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <div class="brand">
+        <div class="logo-box">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <span class="brand-text">BuddyCode<span class="accent">.</span></span>
+      </div>
+      <span class="version">v1.0</span>
+    </div>
+
+    <div class="popup-body">
+      <div class="toggle-row">
+        <span class="toggle-label">Extension Enabled</span>
+        <label class="switch">
+          <input type="checkbox" id="toggle-enabled" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-title">Features</div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <span class="toggle-label">Complexity Analysis</span>
+          <span class="toggle-desc">Time &amp; space complexity display</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-complexity" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <span class="toggle-label">Company Tags</span>
+          <span class="toggle-desc">Verified company tag injection</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-companies" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <span class="toggle-label">ELO Ratings</span>
+          <span class="toggle-desc">Numerical difficulty scores</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-elo" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <span class="toggle-label">Interview Frequency</span>
+          <span class="toggle-desc">Company interview frequency</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-freq" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <span class="toggle-label">Submission Panel</span>
+          <span class="toggle-desc">Post-submit diagnostics</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-submission" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+
+    <div class="popup-footer">
+      <span>BuddyCode</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

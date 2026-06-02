@@ -1,0 +1,134 @@
+/* ── BuddyCode — Popup Styles ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 340px;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  background: #fff;
+  color: #18181b;
+  -webkit-font-smoothing: antialiased;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.logo-box {
+  width: 22px; height: 22px;
+  background: #cd5c5c;
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+}
+.brand-text {
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: -0.03em;
+}
+.accent { color: #cd5c5c; }
+.version {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: #a1a1aa;
+  font-weight: 600;
+}
+
+.popup-body {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.section-title {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a1a1aa;
+  margin: 6px 0 4px;
+}
+
+.divider {
+  height: 1px;
+  background: #f4f4f5;
+  margin: 4px 0;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+}
+
+.toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.toggle-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #18181b;
+  letter-spacing: -0.01em;
+}
+
+.toggle-desc {
+  font-size: 0.64rem;
+  color: #a1a1aa;
+}
+
+/* ── Toggle Switch ──────────────────────────────────────────────────── */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #d4d4d8;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 14px; width: 14px;
+  left: 3px; bottom: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+.switch input:checked + .slider { background: #cd5c5c; }
+.switch input:checked + .slider::before { transform: translateX(16px); }
+
+
+/* ── Popup Footer ───────────────────────────────────────────────────── */
+.popup-footer {
+  padding: 8px 18px;
+  border-top: 1px solid #e4e4e7;
+  text-align: center;
+  font-size: 0.62rem;
+  color: #a1a1aa;
+}
