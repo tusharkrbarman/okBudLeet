@@ -784,46 +784,18 @@
   }
 
   function guessDataStructure(slug, data) {
-    if (!data) return "Unknown";
-    const time = data.time;
-    if (time.includes("n log n")) return "Sorting / Heap / Divide & Conquer";
-    if (time === "O(log n)") return "Binary Search / Tree";
-    if (time.includes("log n") && time.includes("n")) return "Hash Table / Binary Search";
-    if (time.includes("n") && !time.includes("log") && !time.includes("²") && !time.includes("m·n")) {
-      if (data.space === "O(n)" && (data.companies || []).length > 3) return "Hash Table / Array";
-      if (data.space === "O(1)") return "Two Pointers / Iteration";
-      return "Linear Scan";
-    }
-    if (time.includes("n²")) return "Nested Iteration / DP Table";
-    if (time.includes("m·n")) return "Grid Traversal / 2D DP";
-    if (time.includes("n·2^n")) return "Backtracking / Recursion";
-    if (time.includes("n·k") || time.includes("n·m")) return "DP with Memoization";
-    if (time === "O(1)") return "Hash Map / Stack (Amortized)";
-    if (time.includes("log n")) return "Binary Search / Tree";
-    return "Standard Iteration";
+    return "Algorithmic approach";
   }
 
   function guessOptimizedStructure(data) {
-    if (!data) return "N/A";
-    const time = data.time;
-    if (time === "O(n)") return "Hash Map / Two Pointers";
-    if (time === "O(log n)") return "Binary Search";
-    if (time.includes("n log n")) return "Heap / Divide & Conquer";
-    if (time.includes("n²")) return "Dynamic Programming";
-    if (time === "O(1)") return "Stack / Hash Map (LRU-style)";
-    if (time.includes("log n") && time.includes("n")) return "Balanced BST / Segment Tree";
-    return "Approach matches optimal complexity";
+    return "Algorithmic approach";
   }
 
   function guessStyleFeedback(data) {
-    const notes = [];
-    if (!data) return notes;
-    if (data.time === "O(n)" && data.space === "O(1)") notes.push("Efficient in-place algorithm detected");
-    if (data.time.includes("log n")) notes.push("Divide and conquer pattern identified");
-    if (data.time.includes("n²")) notes.push("Quadratic complexity — verify input constraints");
-    if (data.space === "O(1)") notes.push("Constant space usage meets production standards");
-    if (data.space === "O(n)") notes.push("Linear auxiliary space — check if in-place possible");
-    return notes;
+    return [
+      "Solution accepted — well done",
+      "Review the problem constraints and edge cases"
+    ];
   }
 
   function escapeHtml(str) {
@@ -845,7 +817,6 @@
 
     const detected = guessDataStructure(resolvedSlug, data);
     const suggested = guessOptimizedStructure(data);
-    const isMatch = detected && suggested && detected !== "Unknown" && detected.split('/').some(p => suggested.toLowerCase().includes(p.trim().toLowerCase()));
     const title = (resolvedSlug || "this problem").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 
     const runtimeMs = stats.runtimeMs != null ? stats.runtimeMs : 5;
@@ -859,16 +830,12 @@
       runtimeBeats: runtimeBeats,
       memoryMB: memoryMB,
       memoryBeats: memoryBeats,
-      currentApproach: detected || "Depth-First Search / Backtracking / Recursion",
-      suggestedApproach: suggested || "Depth-First Search / Backtracking / Recursion",
-      keyIdea: data
-        ? `Use ${(suggested || "DFS").toLowerCase()} to solve this problem efficiently with ${data.time} time and ${data.space} space complexity.`
-        : "Use DFS with backtracking to explore every path from source to target in a directed acyclic graph."
+      currentApproach: detected,
+      suggestedApproach: suggested,
+      keyIdea: `Take a moment to review the constraints and edge cases for ${title} before moving on.`
     };
 
-    const congratsMsg = isMatch
-      ? `Congratulations! You passed this problem, marking a successful attempt at solving ${title} using ${defaults.currentApproach.split(' / ')[0].toLowerCase()}.`
-      : `Congratulations! You passed this problem, marking a successful attempt at finding all paths in a DAG using depth-first search.`;
+    const congratsMsg = `Congratulations! You passed ${title}.`;
 
     const rtBeatsClass = defaults.runtimeBeats >= 70 ? "beats-high" : defaults.runtimeBeats >= 30 ? "beats-mid" : "beats-low";
     const memBeatsClass = defaults.memoryBeats >= 70 ? "beats-high" : defaults.memoryBeats >= 30 ? "beats-mid" : "beats-low";
@@ -893,7 +860,6 @@
     }).join('');
 
     const styleNotes = guessStyleFeedback(data);
-    if (styleNotes.length === 0) styleNotes.push("Complexity matches expected pattern");
 
     const panel = document.createElement("div");
     panel.id = "buddycode-submission-panel";
