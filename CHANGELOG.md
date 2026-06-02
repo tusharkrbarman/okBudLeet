@@ -5,6 +5,18 @@ All notable changes to BuddyCode are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — Patch
+
+### Removed
+- **Complexity Analysis widget** on the description page (per user request).
+- All Big-O and complexity-based heuristics from the post-submission panel (per user request).
+  - `guessDataStructure()`, `guessOptimizedStructure()`, `guessStyleFeedback()` simplified.
+  - Key Idea, congrats message, and code style notes are now generic.
+  - Runtime, memory, beats, and distribution histogram are preserved.
+
+### Changed
+- Version bumped to `1.0.1` to match GitHub release.
+
 ## [1.0.0] — Initial Release
 
 ### Added

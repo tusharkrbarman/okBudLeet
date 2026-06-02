@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BuddyCode",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Verified company tags, ELO ratings, interview frequency, and post-submission diagnostics for LeetCode.",
   "permissions": ["storage"],
   "host_permissions": [
