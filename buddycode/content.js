@@ -176,7 +176,7 @@
     chrome.storage.local.get(["buddycode_config"], (result) => {
       if (result.buddycode_config) {
         Object.assign(CONFIG, result.buddycode_config);
-        if (dataLoaded) processPage();
+        if (dataLoaded) refreshCurrentPage();
       }
     });
 
@@ -185,8 +185,14 @@
       const val = changes.buddycode_config.newValue;
       if (!val) return;
       Object.assign(CONFIG, val);
-      if (dataLoaded) processPage();
+      if (dataLoaded) refreshCurrentPage();
     });
+  }
+
+  function refreshCurrentPage() {
+    cleanupWidgets();
+    currentSlug = "";
+    if (CONFIG.enabled) processPage();
   }
 
   // ── Navigation Observer (SPA) ──────────────────────────────────────────
@@ -615,6 +621,10 @@
     if (submissionObserver) {
       submissionObserver.disconnect();
       submissionObserver = null;
+    }
+    if (eloRetryTimer) {
+      clearTimeout(eloRetryTimer);
+      eloRetryTimer = null;
     }
   }
 

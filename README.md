@@ -6,7 +6,7 @@
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Ready-blue?logo=google-chrome&logoColor=white)](#installation)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success?logo=googlechrome&logoColor=white)](buddycode/manifest.json)
-[![Version](https://img.shields.io/badge/version-1.0.0-orange)](#changelog)
+[![Version](https://img.shields.io/badge/version-1.0.1-orange)](#changelog)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](#license)
 [![No Tracking](https://img.shields.io/badge/privacy-no--tracking-brightgreen)](#privacy)
 [![Open Source](https://img.shields.io/badge/source-open--source-blueviolet?logo=github)](#)
